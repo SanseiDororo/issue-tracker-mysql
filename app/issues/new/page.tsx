@@ -20,8 +20,12 @@ const NewIssuePage = () => {
     <form
       className="max-w-4xl space-y-3 m-auto mt-20"
       onSubmit={handleSubmit(async (data) => {
-        await axios.post('/api/issues', data)
-        router.push('/issues')
+        try {
+          await axios.post('/api/issues', data)
+          router.push('/issues')
+        } catch (error) {
+          console.log(error)
+        }
       })}
     >
       <TextField.Root>
