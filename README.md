@@ -142,3 +142,16 @@ Import radix css in root layout.
 
 In layout import the {Theme} component. Wrap everything inside the body element into the
 <Theme> wraper </Theme>
+
+- Install markdown editor:
+
+pnpm install --save react-simplemde-editor easymde
+
+import SimpleMDE from "react-simplemde-editor";
+import "easymde/dist/easymde.min.css";
+
+<SimpleMDE />;
+
+- Install react-hook-form
+
+pnpm install react-hook-form
