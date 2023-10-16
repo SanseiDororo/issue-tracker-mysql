@@ -102,6 +102,14 @@ Installation: pnpx i prisma
 
   pnpx prisma db pull
 
+- we need to create prisma client:
+
+  - under the prisma folder create client.ts file and place the code from the official example:
+
+    [https://www.prisma.io/docs/guides/other/troubleshooting-orm/help-articles/nextjs-prisma-client-dev-practices]
+
+  - create routes in app/api/issues/routes
+
 - You can check if teh database on the server was created succesfully with various tools. This project is using DBeaver.
 
 2. Data validation
@@ -111,3 +119,26 @@ For the data validation we use Zod.
 Installation:
 
 pnpm i zod@3.22.2
+
+- Create z object:
+
+  ` 
+const createIssueSchema = z.object({
+title: z.string().min(1).max(255),
+description: z.string().min(1),
+})`
+
+And set validation method:
+
+createIssueSchema.safeParse(body)
+
+### User interface
+
+For the purpose of building user interface will use redix-ui
+
+npm install @radix-ui/themes
+
+Import radix css in root layout.
+
+In layout import the {Theme} component. Wrap everything inside the body element into the
+<Theme> wraper </Theme>
