@@ -6,7 +6,7 @@ const IssuesPage = () => {
   return (
     <div className="ml-11 mt-11">
       <Button>
-        <Link href="/issues/new">New Issue</Link>
+        <Link href="/issues/new">Submit New Issue</Link>
       </Button>
     </div>
   )
